@@ -49,6 +49,6 @@ run_analysis <- function(){
                             features_mean_std)
   tidy_data <- dcast(All_data_melted, Subject + Activity ~ variable, mean)
   
-  write.table(tidy_data, "tidy_data.txt")
+  write.table(tidy_data, "tidy_data.txt",row.names = FALSE)
 
 }
