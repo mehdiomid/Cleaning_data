@@ -5,9 +5,11 @@ This is the codebook to descibe the variablesin the dataset.
 ##Identifiers
 
 * The subject number is the ID of the subjects who performed the activity. Its range is from 1 to 30.
-* Each observation could be obtained form either a test or train experiment. Here it isidentified by either "test" or "train". 
+* Each observation could be obtained form either a test or train experiment. Here it is identified by either "test" or "train". 
  
-* The experiments were carried out for six activities as below    
+* The experiments were carried out for six activities as below
+
+
 1. WALKING
 2. WALKING UPSTAIRS
 3. WALKING DOWNSTAIRS
