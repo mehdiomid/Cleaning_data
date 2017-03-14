@@ -1,13 +1,12 @@
-
-#This is the codebook to descibe the "tidy_data.txt".
+## Codebook  
+##This is the codebook to descibe the variablesin the dataset.
 
 
 ##Identifiers
 
-* The subject number is the ID of the subjects who performed the activity for each window sample. Its range is from 1 to 30.
-* The data could be for a test or train experiments that were identified by either "test" or "train".
-
-The experiments were carried out for six activities as below
+* The subject number is the ID of the subjects who performed the activity. Its range is from 1 to 30.
+* Each observation could be obtained form either a test or train experiment. Here it isidentified by either "test" or "train".  
+* The experiments were carried out for six activities as below    
 1. WALKING
 2. WALKING UPSTAIRS
 3. WALKING DOWNSTAIRS
@@ -20,7 +19,7 @@ The experiments were carried out for six activities as below
 The reuslts of experiments are presented for the mean and standard deviation of following signals.
 
 tBodyAcc.mean.X  
-    mean of body linear acceleration in x-direction  
+	+ mean of body linear acceleration in x-direction  
 tBodyAcc.mean.Y  
     mean of body linear acceleration in y-direction  
 tBodyAcc.mean.Z  
