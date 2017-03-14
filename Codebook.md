@@ -4,13 +4,12 @@
 
 ##Identifiers
 
-* The subject number is the ID of the subject who performed the activity for each window sample. Its range is from 1 to 30.
+* The subject number is the ID of the subjects who performed the activity for each window sample. Its range is from 1 to 30.
 * The data could be for a test or train experiments that were identified by either "test" or "train".
 * The experiments were carried out for six activities as below
-
 1. WALKING
-2. WALKING_UPSTAIRS
-3. WALKING_DOWNSTAIRS
+2. WALKING UPSTAIRS
+3. WALKING DOWNSTAIRS
 4. SITTING
 5. STANDING
 6. LAYING
@@ -19,12 +18,9 @@
 ##Measurements
 The reuslts of experiments are presented for the mean and standard deviation of following signals.
 
-tBodyAcc.mean.X
-	mean of body linear acceleration in x-direction
-tBodyAcc.mean.Y
-	mean of body linear acceleration in y-direction
-tBodyAcc.mean.Z
-	mean of body linear acceleration in z-direction
+tBodyAcc.mean.X:	mean of body linear acceleration in x-direction
+tBodyAcc.mean.Y: 	mean of body linear acceleration in y-direction
+tBodyAcc.mean.Z:	mean of body linear acceleration in z-direction
 tGravityAcc.mean.X
 	mean of gravityr acceleration in x-direction
 tGravityAcc.mean.Y
