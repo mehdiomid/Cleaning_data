@@ -8,6 +8,7 @@ run_analysis <- function(){
   ## =================================================
   ##
   activity_labels <- read.table("activity_labels.txt")
+  activity_labels$V2 <- gsub("_"," ",activity_labels$V2) # remove _
   features <- read.table("features.txt")
   #
   x_train <- read.table("train/x_train.txt")
@@ -29,19 +30,25 @@ run_analysis <- function(){
   # Conscructing train_data
   x_train <- x_train[mean_std_location] # Extracting required features
   activity <-factor(y_train$V1,labels = activity_labels$V2)
-  train_or_test <- factor(rep("train",nrow(x_train)),levels = c("test","train"))
-  train_data <- cbind(subject_train,train_or_test,activity, x_train)
+  train_data <- cbind(subject_train,activity, x_train)
   #
   # =====================================================
   # Constructing test_data
   x_test <- x_test[mean_std_location] # Extracting required features
   activity <-factor(y_test$V1,labels = activity_labels$V2)
-  train_or_test <- factor(rep("test",nrow(x_test)),levels = c("test","train"))
-  test_data <- cbind(subject_test,train_or_test,activity, x_test)
+  test_data <- cbind(subject_test,activity, x_test)
   #
   ## Combining training and test data together
-  tidy_data <- rbind(train_data,test_data)
-  colnames(tidy_data) <-c("Subject No", "train or test", "Activity",features_mean_std)
+  All_data <- rbind(train_data,test_data)
+  colnames(All_data) <-c("Subject", "Activity",features_mean_std)
+  ##======================================================
+  # Step 5 reshaping data 
+  All_data$Subject <- factor(All_data$Subject)
+  library(reshape2)
+  All_data_melted <- melt(All_data, id = c("Subject", "Activity"), measure.vars = 
+                            features_mean_std)
+  tidy_data <- dcast(All_data_melted, Subject + Activity ~ variable, mean)
+  
   write.table(tidy_data, "tidy_data.txt")
 
 }
